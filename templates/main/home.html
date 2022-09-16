@@ -1,0 +1,36 @@
+{% extends 'templates/main.html' %}
+{% block content %}
+<div class="container">
+
+<br>
+<br>
+<center><h1 class="title"><span style="font-size:70px">Foundational Documents</span> For Dummies<sup>(Idiots)</sup></h1></center>
+<center><p class="title">By Juan Molina</p>.</center>
+<hr>
+	{% if dummies|length_is:0 %}
+	<center><h1>NO DOCUMENTS IN DATABASE</h1></center>
+{% else%}
+<div class="d-flex">
+	{% for d in dummies %}
+	<a href="{% url 'post' d.id %}" class="text text-dark nav-link">
+		<div class="card dummy-card btn btn-light" style="margin: 10px; padding: 50px;">
+			<div class="container" style="width: fit-content;
+block-size: fit-content;">
+			<h3 class="card-title">{{d.title}}</h3>
+			</div>
+		</div>
+	</a>
+		{% endfor %}
+</div>
+{% endif%}
+
+	
+
+<br>
+<br>
+	
+</div>
+
+
+
+{% endblock content %}

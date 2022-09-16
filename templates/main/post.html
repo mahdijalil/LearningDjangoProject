@@ -1,0 +1,16 @@
+{% extends 'templates/main.html'%}
+{% block content%}
+
+<div class="container">
+
+<center>
+<br></br>
+	<h1 class="title">{{post.title}}</h1>
+	<p class="text-muted">By Juan Molina</p>
+	<img width="40%" height="40%"  src="{{post.pic.url}}">
+	<span style="z-index:-10">{{post.text|safe}}</span>
+</center>
+<br><br>
+</div>
+
+{% endblock content%}
